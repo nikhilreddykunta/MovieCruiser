@@ -4,7 +4,6 @@ import com.stackroute.moviedb.domain.Movie;
 import com.stackroute.moviedb.exceptions.MovieAlreadyExistsException;
 import com.stackroute.moviedb.exceptions.MovieNotFoundException;
 import com.stackroute.moviedb.service.MovieService;
-import org.hibernate.boot.archive.scan.spi.ScanOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
