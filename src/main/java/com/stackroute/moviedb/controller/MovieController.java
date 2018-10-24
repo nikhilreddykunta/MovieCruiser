@@ -76,7 +76,7 @@ public class MovieController {
         try{
             responseEntity = new ResponseEntity<Movie>(movieService.getMovie(id) , HttpStatus.OK);
         }catch (Exception e){
-            responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.CONFLICT);
+            responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
         return responseEntity;
     }
@@ -87,7 +87,7 @@ public class MovieController {
         try{
             responseEntity = new ResponseEntity<Movie>(movieService.getByMovieTitle(movieTitle) , HttpStatus.OK);
         }catch (MovieNotFoundException e){
-            responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.CONFLICT);
+            responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
         return responseEntity;
     }

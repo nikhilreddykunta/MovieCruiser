@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class MovieServiceImpl implements MovieService {
 
@@ -46,8 +49,9 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public void deleteMovie(String id) {
+    public boolean deleteMovie(String id) {
         movieRepository.delete(movieRepository.findById(id).get());
+        return true;
     }
 
     @Override
@@ -65,4 +69,6 @@ public class MovieServiceImpl implements MovieService {
         }
         return movie;
     }
+
+
 }
